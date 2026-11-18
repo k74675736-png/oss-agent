@@ -33,9 +33,9 @@ if command is None or date is None:
 # [빈칸 2] 할 일에 맞는 tools.py 함수를 불러 결과를 result 에 담기
 #          rank 면 1위 제목, audience 면 세 번째 칸의 영화 제목으로 관객 수
 if command == "rank":
-    result = None
+    result = tools.get_boxoffice_rank_1(date)
 elif command == "audience" and len(args) >= 3:
-    result = None
+    result = tools.get_movie_audience(date, args[2])
 else:
     result = "쓰는 법: boxoffice.py rank 날짜 / boxoffice.py audience 날짜 영화제목"
 if result is None:
